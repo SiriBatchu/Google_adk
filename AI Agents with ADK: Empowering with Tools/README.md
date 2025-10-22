@@ -117,15 +117,15 @@ GCS_BUCKET_NAME="your-proposal-storage-bucket"
 
 ```mermaid
 flowchart LR
-  U[User<br/>(prompt)] -->|request| A[ADK Agent<br/>(Gemini)]
+  U[User (Prompt)] -->|Request| A[ADK Agent (Gemini)]
   subgraph GCP[Google Cloud Platform]
     A -->|Reason + Plan| M[(Gemini Model)]
-    A -->|invoke tool| T[Tool: GCS Writer]
-    T -->|store proposal| B[(GCS Bucket)]
-    I[IAM Policies<br/>Service Account Roles] --- A
-    E[.env Config<br/>PROJECT_ID, MODEL_NAME,<br/>GCS_BUCKET_NAME] --- A
+    A -->|Invoke Tool| T[Tool: GCS Writer]
+    T -->|Store Proposal| B[(GCS Bucket)]
+    I[IAM Policies / Service Account Roles] --- A
+    E[.env Config (PROJECT_ID, MODEL_NAME, GCS_BUCKET_NAME)] --- A
   end
-  A -->|return URL| U
+  A -->|Return File URL| U
 ```
 
 ---
@@ -141,14 +141,15 @@ sequenceDiagram
   participant T as GCS Writer Tool
   participant B as GCS Bucket
 
-  U->>A: "Generate kitchen renovation proposal..."
-  A->>M: Plan & draft content (goal-based reasoning)
-  M-->>A: Structured proposal document
+  U->>A: Generate renovation proposal
+  A->>M: Plan and draft proposal
+  M-->>A: Structured proposal text
   A->>T: save_file(path, bytes)
-  T->>B: Upload file to GCS
+  T->>B: Upload to bucket
   B-->>T: Return object URL
-  T-->>A: Success message + URL
-  A-->>U: "Saved to gs://... / https://storage.googleapis.com/..."
+  T-->>A: Success + URL
+  A-->>U: Respond with GCS file link
+
 ```
 
 ---
