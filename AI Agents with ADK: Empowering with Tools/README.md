@@ -168,7 +168,7 @@ Original Codelab Source
 
 For the full, detailed implementation steps and deep dives into the Gemini CLI integration, refer to the official codelab:
 
-https://codelabs.developers.google.com/travel-agent-mcp-toolbox-adk#0
+https://codelabs.developers.google.com/devsite/codelabs/build-agents-with-adk-empowering-with-tools#0
 
 For further learning and documentation:
 
