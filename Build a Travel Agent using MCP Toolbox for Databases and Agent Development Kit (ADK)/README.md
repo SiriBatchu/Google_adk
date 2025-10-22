@@ -181,6 +181,12 @@ Any associated storage or network resources
 
 ## 🔗 Reference
 
+Original Codelab Source
+
+For the full, detailed implementation steps and deep dives into the Gemini CLI integration, refer to the official codelab:
+
+https://codelabs.developers.google.com/travel-agent-mcp-toolbox-adk#0
+
 For detailed steps and official documentation, refer to:
 
 - [Google Codelab: Travel Agent with MCP Toolbox & ADK](https://codelabs.developers.google.com/travel-agent-mcp-toolbox-adk#0)
