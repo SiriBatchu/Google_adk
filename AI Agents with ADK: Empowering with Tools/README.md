@@ -164,6 +164,12 @@ sequenceDiagram
 
 ## 🔗 Reference
 
+Original Codelab Source
+
+For the full, detailed implementation steps and deep dives into the Gemini CLI integration, refer to the official codelab:
+
+https://codelabs.developers.google.com/travel-agent-mcp-toolbox-adk#0
+
 For further learning and documentation:
 
 * [Vertex AI Agent Development Kit (ADK)](https://cloud.google.com/vertex-ai/docs/agents/overview)
