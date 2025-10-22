@@ -17,7 +17,6 @@
   - [1️⃣ Create Virtual Environment](#1️⃣-create-virtual-environment)
   - [2️⃣ Install ADK & Dependencies](#2️⃣-install-adk--dependencies)
   - [3️⃣ Configure Environment Variables](#3️⃣-configure-environment-variables)
-- [🏗️ Architecture](#️-architecture)
 - [🔁 Execution Flow](#-execution-flow)
 - [🧠 What You’ll Learn](#-what-youll-learn)
 - [🪄 Example Use Case](#-example-use-case)
@@ -112,21 +111,6 @@ GCS_BUCKET_NAME="your-proposal-storage-bucket"
 > so the agent can upload files to your specified bucket.
 
 ---
-
-## 🏗️ Architecture
-
-```mermaid
-flowchart LR
-  U[User (Prompt)] -->|Request| A[ADK Agent (Gemini)]
-  subgraph GCP[Google Cloud Platform]
-    A -->|Reason + Plan| M[(Gemini Model)]
-    A -->|Invoke Tool| T[Tool: GCS Writer]
-    T -->|Store Proposal| B[(GCS Bucket)]
-    I[IAM Policies / Service Account Roles] --- A
-    E[.env Config (PROJECT_ID, MODEL_NAME, GCS_BUCKET_NAME)] --- A
-  end
-  A -->|Return File URL| U
-```
 
 ---
 
